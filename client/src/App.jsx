@@ -1,13 +1,27 @@
-import { useState } from "react"
-import { Button } from "./components/ui/button"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Links from "./pages/Links"
+import Qrcode from "./pages/Qrcode"
+import Home from "./pages/Home"
+import Signup from "./pages/Signup"
+import Login from "./pages/Login"
+import PrivateRoute from "./components/PrivateRoute"
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
-      <Button onClick={() => setCount(count + 1)}>Click me</Button>
-      <p>Count: {count}</p>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/sign-up' element={<Signup />} />
+          <Route path='/sign-in' element={<Login />} />
+          <Route element={<PrivateRoute />} >
+            <Route path='/link' element={<Links />} />
+            <Route path='/qrcode' element={<Qrcode />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
