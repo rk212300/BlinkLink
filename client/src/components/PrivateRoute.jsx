@@ -1,14 +1,17 @@
-import { Outlet, Navigate } from 'react-router-dom'
-import Sidebar from './Sidebar'
-import Header from './Header'
+import { Navigate, Outlet } from "react-router-dom";
+
+import Sidebar from "./Sidebar";
 
 export default function PrivateRoute() {
-    const currentUser = true
+    const currentUser = true;
     return (
-        <div>
-            <Header />
-            <Sidebar />
-            {currentUser ? <Outlet /> : <Navigate to='/sign-in' />}
+        <div className="flex max-h-screen overflow-hidden">
+            <div className="w-[15%] overflow-y-auto border-r border-gray-300 relative">
+                <Sidebar />
+            </div>
+            <div className="w-[85%] overflow-y-auto min-h-screen h-screen bg-[#f4f6fa]">
+                {currentUser ? <Outlet /> : <Navigate to="/sign-in" />}
+            </div>
         </div>
-    )
+    );
 }
