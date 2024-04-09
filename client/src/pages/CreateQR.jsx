@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Divider from "@/components/Divider";
-import InputComponent from "@/components/CustomInput";
+import InputComponent from "@/components/InputComponent";
 import { useState } from "react";
 
 const CreateQR = () => {
@@ -115,7 +115,7 @@ const Footer = () => {
                 <Button
                     label="Cancel"
                     onClick={() => {}}
-                    className="bg-transparent text-black hover:bg-zinc-300/20 border border-zinc-300"
+                    className="bg-slate-500 text-black hover:bg-zinc-300 border border-zinc-300"
                 />
                 <Button
                     label="Design your code"

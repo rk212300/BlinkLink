@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Divider from "@/components/Divider";
-import InputComponent from "@/components/CustomInput";
+import InputComponent from "@/components/InputComponent";
 import ToggleButton from "@/components/ToggleButton";
 import { useState } from "react";
 
@@ -140,11 +140,11 @@ const Footer = () => {
                         </span>
                     </p>
                 </div>
-                <div>
+                <div className="flex gap-4">
                     <Button
                         label="Cancel"
                         onClick={() => {}}
-                        className="bg-transparent text-black hover:bg-zinc-300"
+                        className="bg-slate-500 text-black hover:bg-zinc-300"
                     />
                     <Button
                         label="Create"

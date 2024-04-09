@@ -5,6 +5,7 @@ const Button = ({
     className = "",
     onClick = () => {},
     disabled = false,
+    icon = null,
 }) => {
     return (
         <button
@@ -13,6 +14,7 @@ const Button = ({
             disabled={disabled}
         >
             {label}
+            {icon}
         </button>
     );
 };
@@ -22,6 +24,7 @@ Button.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func,
     disabled: PropTypes.bool,
+    icon: PropTypes.element,
 };
 
 export default Button;

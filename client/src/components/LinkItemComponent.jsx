@@ -18,7 +18,9 @@ const LinkItemComponent = ({
             <div className="flex flex-col gap-1 flex-1">
                 <h1 className="font-bold text-lg mb-1">{title}</h1>
                 <p className="text-base text-blue-400">{shortUrl}</p>
-                <p className="text-sm font-light">{url}</p>
+                <p className="text-sm font-light line-clamp- max-w-[52ch]">
+                    {url}
+                </p>
                 <div className="flex font-normal mt-2 text-sm space-x-4">
                     <p className="">Clicks : 0</p>
                     <p className="">
