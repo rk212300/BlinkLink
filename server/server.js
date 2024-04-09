@@ -1,6 +1,10 @@
 const express = require('express');
 const connectDB = require('./db/connection');
 const authRoutes = require('./routes/auth.route');
+const linkRoutes = require('./routes/link.route');
+const verifyToken = require('./utils/verifyUser');
+const { redirectToOriginalLink, incrementClicks } = require('./controllers/link.controller');
+
 
 
 
@@ -11,7 +15,10 @@ app.get('/', (req, res) => {
     res.send('Hello World');
 });
 
+app.get('/:shortUrl', redirectToOriginalLink);
+
 app.use('/api/auth', authRoutes);
+app.use('/api/link', linkRoutes);
 
 
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const urlSchema = new mongoose.Schema({
+const linkSchema = new mongoose.Schema({
     url: {
         type: String,
         required: true
@@ -13,10 +13,6 @@ const urlSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
-    },
-    date: {
-        type: String,
-        default: Date.now
     },
     clicks: {
         type: Number,
@@ -32,6 +28,6 @@ const urlSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-const Url = mongoose.model('Url', urlSchema);
+const Link = mongoose.model('Link', linkSchema);
 
-module.exports = Url;
+module.exports = Link;
